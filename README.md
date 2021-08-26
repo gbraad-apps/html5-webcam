@@ -1,1 +1,2 @@
-# html5-webcam
+HTML5 Webcam viewer
+===================
