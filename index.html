@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="stuff, to, help, search, engines, not">
-    <meta name="description" content="What this page is about.">
-    <meta name="title" content="Webcam viewer">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="stuff, to, help, search, engines, not" />
+    <meta name="description" content="What this page is about." />
+    <meta name="title" content="Webcam viewer" />
     <title>Webcam viewer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="container">
-      <video autoplay="true" id="videoElement"></video>
+    <div id="selector">
+      <label>Video:</label>
+      <select id="video-source"></select>
+      <label>Audio:</label>
+      <select id="audio-source"></select>
+      <button id="selection">Done</button>
+    </div>
+
+    <div id="container" style="visibility: hidden;">
+      <video autoplay="false" id="videoElement"></video>
     </div>
     <script src="./app.js"></script>
   </body>
