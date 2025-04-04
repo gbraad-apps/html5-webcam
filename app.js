@@ -3,6 +3,8 @@ var selector = document.querySelector("#selector");
 var selection = document.querySelector("#selection");
 var videoSourcesSelect = document.getElementById("video-source");
 var audioSourcesSelect = document.getElementById("audio-source");
+var videoWidth = document.getElementById("video-width");
+var videoHeight = document.getElementById("video-height");
 
 videoSourcesSelect.appendChild(new Option());
 audioSourcesSelect.appendChild(new Option());
@@ -46,6 +48,9 @@ selection.onclick = function () {
 
   const audioSource = audioSourcesSelect.value;
   const videoSource = videoSourcesSelect.value;
+  const width = parseInt(videoWidth.value) || 1920;
+  const height = parseInt(videoHeight.value) || 1080;
+  
   const constraints = {
     audio: {
       deviceId: audioSource ? { exact: audioSource } : undefined,
@@ -53,8 +58,8 @@ selection.onclick = function () {
     },
     video: {
       deviceId: videoSource ? { exact: videoSource } : undefined,
-      width: { min: 1920 },
-      height: { min: 1080 }
+      width: { min: width },
+      height: { min: height }
     }
   };
 
